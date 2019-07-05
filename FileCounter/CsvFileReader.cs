@@ -1,8 +1,8 @@
 ﻿using System;
-using System.IO;
 using System.Linq;
 using System.Text;
 using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace FileCounter
 {
@@ -12,7 +12,8 @@ namespace FileCounter
 
         public CsvFileReader(IConfiguration configuration)
         {
-            path = configuration["Path"];
+            //path = configuration["Path"];
+            path = @"C:\book.csv";
         }
 
         public string[] Read()

@@ -13,6 +13,7 @@ namespace FileCounter
 
         private static void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton(provider => Configuration);
             services.AddTransient<IReader, CsvFileReader>();
             services.AddTransient<ICounter, Counter>();
         }
@@ -32,7 +33,9 @@ namespace FileCounter
             Services = new ServiceCollection();
             ConfigureServices(Services);
             Provider = Services.BuildServiceProvider();
+
             var counter = Provider.GetRequiredService<ICounter>();
+            counter.Calculate();
         }
 
         private static IConfiguration ReadConfiguration()
