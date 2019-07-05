@@ -6,10 +6,15 @@ using System.IO;
 
 namespace FileCounter
 {
+    ///<inheritdoc/>
     public class CsvFileReader : IReader
     {
         private readonly string path;
 
+        /// <summary>
+        /// Конструктор.
+        /// </summary>
+        /// <param name="configuration">Конфигурация.</param>
         public CsvFileReader(IConfiguration configuration)
         {
             path = configuration["Path"];

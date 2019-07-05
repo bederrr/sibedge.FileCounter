@@ -2,9 +2,19 @@
 
 namespace FileCounter
 {
+    /// <summary>
+    /// Файл.
+    /// </summary>
     public class File
     {
-        public string Type { get; set; }
+        /// <summary>
+        /// Количество.
+        /// </summary>
         public int Count { get; set; }
+
+        /// <summary>
+        /// Тип.
+        /// </summary>
+        public string Type { get; set; }
     }
 }

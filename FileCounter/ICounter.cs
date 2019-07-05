@@ -9,9 +9,9 @@ namespace FileCounter
     public interface ICounter
     {
         /// <summary>
-        /// Подсчитать.
+        /// Посчитать.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Список типов.</returns>
         List<File> Calculate();
     }
 }
