@@ -4,45 +4,49 @@ using System.Linq;
 
 namespace FileCounter
 {
+    ///<inheritdoc/>
     public class Counter : ICounter
     {
         private readonly List<File> files;
         private readonly List<string> inputData;
 
+        /// <summary>
+        /// Конструктор.
+        /// </summary>
+        /// <param name="reader">Ридер.</param>
         public Counter(IReader reader)
         {
             inputData = reader.Read().ToList();
             files = new List<File>();
         }
 
-        public string Calculate()
+        public List<File> Calculate()
         {
             inputData.ForEach(x =>
             {
                 if (x.Length > 0)
-                {
                     ProcessFile(x.Split("."));
-                }
             });
+            return files;
         }
 
         private void ProcessFile(string[] file)
         {
             if (file.Length > 1)
             {
-                AddFile(file[file.Length-1].ToLower());
+                AddType(file[file.Length-1].ToLower());
             }
             else
             {
-                AddUndefinedFile();
+                AddUndefinedType();
             }
         }
 
-        private void AddFile(string type)
+        private void AddType(string type)
         {
             var i = files.FindIndex(x => x.Type == type);
 
-            if (i >= 0)
+            if (i > -1)
             {
                 files[i].Count++;
             }
@@ -56,7 +60,7 @@ namespace FileCounter
             }
         }
 
-        private void AddUndefinedFile()
+        private void AddUndefinedType()
         {
             if (files.FirstOrDefault(x => x.Type == "Undefined") == null)
             {

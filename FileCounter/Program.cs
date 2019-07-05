@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -34,8 +35,13 @@ namespace FileCounter
             ConfigureServices(Services);
             Provider = Services.BuildServiceProvider();
 
-            var counter = Provider.GetRequiredService<ICounter>();
-            counter.Calculate();
+            List<File> files = Provider.GetRequiredService<ICounter>().Calculate();
+            foreach (var file in files)
+            {
+                Console.WriteLine(file.Type + " " + file.Count.ToString());
+            }
+
+            Console.ReadKey();
         }
 
         private static IConfiguration ReadConfiguration()

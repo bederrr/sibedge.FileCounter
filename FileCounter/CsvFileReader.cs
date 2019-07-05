@@ -12,8 +12,7 @@ namespace FileCounter
 
         public CsvFileReader(IConfiguration configuration)
         {
-            //path = configuration["Path"];
-            path = @"C:\book.csv";
+            path = configuration["Path"];
         }
 
         public string[] Read()
