@@ -24,8 +24,8 @@ namespace FileCounter
                 .Select(x => x.Split("."))
                 .Select(x => x.Length > 1 ? x[x.Length - 1].ToLower() : "Undefined")
                 .GroupBy(x => x)
-                .OrderByDescending(x => x.Count())
-                .Select(x => new File { Type = x.Key, Count = x.Count() }).ToList();
+                .Select(x => new File { Type = x.Key, Count = x.Count() })
+                .ToList();
         }
     }
 }
