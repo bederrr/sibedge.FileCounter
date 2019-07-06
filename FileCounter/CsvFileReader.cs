@@ -25,9 +25,9 @@ namespace FileCounter
             {
                 return ReadInputData().Split(";");
             }
-            catch
+            catch (Exception exception)
             {
-                throw new Exception("File is empty.");
+                throw new Exception(exception.Message);
             }
         }
 
