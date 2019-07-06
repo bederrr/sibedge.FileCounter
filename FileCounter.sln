@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileCounter", "FileCounter\FileCounter.csproj", "{96B8660F-CE6C-4926-A53D-8C2203FC58F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileCounter", "FileCounter\FileCounter.csproj", "{96B8660F-CE6C-4926-A53D-8C2203FC58F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharCounter", "..\..\Users\Konstantin\source\repos\CharCounter\CharCounter\CharCounter.csproj", "{65AF056E-1FD5-4795-902F-54C86ABF88A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{96B8660F-CE6C-4926-A53D-8C2203FC58F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96B8660F-CE6C-4926-A53D-8C2203FC58F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96B8660F-CE6C-4926-A53D-8C2203FC58F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65AF056E-1FD5-4795-902F-54C86ABF88A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65AF056E-1FD5-4795-902F-54C86ABF88A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65AF056E-1FD5-4795-902F-54C86ABF88A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65AF056E-1FD5-4795-902F-54C86ABF88A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

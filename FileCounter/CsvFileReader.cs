@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Text;
 using Microsoft.Extensions.Configuration;
-using System.IO;
 
 namespace FileCounter
 {
@@ -22,7 +21,14 @@ namespace FileCounter
 
         public string[] Read()
         {
-            return ReadInputData().Split(";");
+            try
+            {
+                return ReadInputData().Split(";");
+            }
+            catch
+            {
+                throw new Exception("File is empty.");
+            }
         }
 
         private string ReadInputData()

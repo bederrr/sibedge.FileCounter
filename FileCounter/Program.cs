@@ -35,10 +35,17 @@ namespace FileCounter
             ConfigureServices(Services);
             Provider = Services.BuildServiceProvider();
 
-            List<File> files = Provider.GetRequiredService<ICounter>().Calculate();
-            foreach (var file in files)
+            try
             {
-                Console.WriteLine(file.Type + " " + file.Count.ToString());
+                List<File> files = Provider.GetRequiredService<ICounter>().Calculate();
+                foreach (var file in files)
+                {
+                    Console.WriteLine(file.Type + " " + file.Count.ToString());
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
             }
 
             Console.ReadKey();
